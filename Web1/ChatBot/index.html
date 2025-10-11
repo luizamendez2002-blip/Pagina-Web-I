@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot IA</title>
+  <style>
+    body {
+      background: #f4f6fa;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 400px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-box {
+      flex-grow: 1;
+      padding: 15px;
+      overflow-y: auto;
+      max-height: 500px;
+    }
+
+    .message {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .user {
+      background-color: #DCF8C6;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background-color: #EAEAEA;
+      align-self: flex-start;
+    }
+
+    .input-box {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    input {
+      flex-grow: 1;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #0084FF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #006edc;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat" class="chat-box"></div>
+    <div class="input-box">
+      <input type="text" id="userInput" placeholder="Escribe un mensaje...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const API_KEY = "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"; // 🔹 REEMPLAZA CON TU CLAVE DE OPENAI
+
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBox = document.getElementById("chat");
+      const userText = input.value.trim();
+      if (userText === "") return;
+
+      // Mostrar mensaje del usuario
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user";
+      userMsg.textContent = userText;
+      chatBox.appendChild(userMsg);
+      input.value = "";
+
+      // Mostrar mensaje de "pensando..."
+      const botMsg = document.createElement("div");
+      botMsg.className = "message bot";
+      botMsg.textContent = "Pensando...";
+      chatBox.appendChild(botMsg);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Llamar a la API de OpenAI
+      try {
+        const response = await fetch("http://localhost:3000/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message: userText })
+}),
+            "Content-Type": "application/json",
+            "Authorization": Bearer ${API_KEY}
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userText }]
+          })
+        });
+
+        const data = await response.json();
+        const botResponse = data.choices?.[0]?.message?.content || "Lo siento, no tengo respuesta.";
+
+        botMsg.textContent = botResponse;
+      } catch (error) {
+        botMsg.textContent = "Ocurrió un error al conectar con la IA.";
+      }
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
