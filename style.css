@@ -1,0 +1,512 @@
+/*
+Paleta de colores
+#EFF1F6
+#323C55
+#af8c51
+#000000
+#FFFFFF
+#333333
+#B0B4BC
+
+*/
+/*Selector Universal*/
+*{
+    margin:0 ;
+    padding:0 ;
+    /*Esta propiedad acomoda el tamaño de la caja según el ancho y alto*/
+    box-sizing: border-box;
+}
+/*Selector por etiqueta*/
+html{
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    background-color:#323C55;
+}
+.header-principal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4% 0.5%;
+    background-color: #0e0d06;
+    background-color: #323C55;
+}
+.logo-container{
+    flex: 1; /*Ocupa el espacio mínimo a la izquierda*/
+    .logo{
+      width: 42%;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 3px #ffffff99);
+        /*border-radius: 60%;*/
+    }
+}
+.menu{
+    flex: 2;
+}
+.menu ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #EFF1F6;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 2%;
+    transition: color 0.3s ease, border-bottom 0.3d ease;
+}
+.menu ul li a:hover{
+    color: #af8c51;
+    border-bottom: 2px solid #af8c51;
+}
+.enter-container{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;   /* Centra verticalmente */
+    gap: 16px; /* Espacio entre el icono y el texto */
+    .ingreso{
+        font-size: 30px;
+        margin-right: 5%;
+        color: #EFF1F6;
+        padding: 4%;
+    }
+    a{
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+    }
+    strong{
+        font-size: 16px;
+        color: #EFF1F6;
+        padding-left: 0.3%;
+    }
+}
+.hero{
+    position: relative;
+    background-image: linear-gradient(20deg,
+    #ffffff71 20%,
+    #8a8589cd 40%, /*degradado primera img*/
+    #4b494961 65%
+    ), url('../imagenes.2/encabezado.webp');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333333;
+    text-align: left;
+    padding: 80px 30px;
+    overflow: hidden;
+}
+.hero::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #323C55;
+    clip-path: polygon(0 100%, 100%, 100% 35%, 100% 100%);
+}
+.hero::before{
+    position: relative;
+    max-width: 600%;
+    z-index: 1;
+}
+ 
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+ 
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+ 
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+ 
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+ 
+.btn-primary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-primary:hover {
+  background: #c12731;
+}
+ 
+.btn-secondary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-secondary:hover {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+ 
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+ 
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+ 
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+ 
+.btn-primary {
+  background: #EF3340;
+  color: #fff;
+}
+ 
+.btn-primary:hover {
+  background: #c12731;
+}
+ 
+.btn-secondary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+ .hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+ 
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+ 
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+ 
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+ 
+.btn-primary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-primary:hover {
+  background: #c12731;
+}
+ 
+.btn-secondary {
+  background: #fff;
+  color: #EF3340;
+}
+ 
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+ 
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+ 
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+ 
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+ 
+.btn-primary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-primary:hover {
+  background: #af8c51;
+}
+ 
+.btn-secondary {
+  background: #324D55;
+  color: #EFF1F6;
+}
+ 
+.btn-secondary:hover {
+  background: #af8c51;
+}
+.Emprendimientos {
+    padding: 4% 3%;
+    background-color: #f8f8f8;
+}   
+.Emprendimientos-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+.Emprendimientos .texto{
+    flex: 1 1 400px;
+    /*flex: [flex-grow] [flex-shrink] [flex-basis];
+  flex-grow: 1;
+  Puede crecer si sobra espacio.
+  flex-shrink: 1;
+  Puede encogerse si falta espacio.
+  flex-basis: 400px;
+  El tamaño base inicial que se intenta asignar.
+  */
+}
+h2{
+    font-size: 36px;
+    color: #323C55;
+    margin-bottom: 2%;
+}
+.texto-Hogar,.texto,.texto-Seguridad,.texto-Cocina{
+    padding: 1.5%;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+}
+.imagen{
+    flex: 1 1 250px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.Emprendimientos .imagen img {
+    max-width: 80%; /* que no ocupe todo el ancho */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #00000033;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    padding: 10px;
+}
+.Nuestras-Empresas, .emprendimientos_Col, .Emprendimientos_Col-content, .cuidado-tarjetas, .Emprendimientos {
+    padding: 2.5% 3.5%;
+    background-color: #f8f8f8;
+    max-width: 85%;
+    margin: 0 auto;
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+}
+.Nuestras-Empresas header p {
+    font-size: 18px;
+    color: #EFF1F6;
+}
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;   /* Para que bajen en pantallas pequeñas */
+    gap: 30px;
+    justify-content: center;
+}
+.contenedor-tarjetas article {
+    background: #fff;
+    border-top: 4px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 300px;   /* Cada tarjeta ocupa mínimo 300px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contenedor-tarjetas article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}   
+.contenedor-tarjetas img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 15px;
+}  
+.contenedor-tarjetas figcaption {
+    font-weight: bold;
+    color: #323C55;
+    margin-bottom: 10px;
+    font-size: 20px;
+}  
+.contenedor-tarjetas p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+} 
+.contenedor-tarjetas a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #323C55;
+    color: #EFF1F6;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.contenedor-tarjetas a:hover {
+    background-color: #af8c51;
+}
+/******************Emprendimiento********************/
+.slider-emprendimientos {
+    display: flex;
+    gap: 20px;
+    overflow: hidden; /* Oculta lo que sale */
+    padding: 20px 0;
+    position: relative;
+}
+.slider-emprendimientos::before,
+.slider-emprendimientos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80%;
+    z-index: 2;
+}   
+.slider-emprendimientos::before {
+    left: 0;
+    background: linear-gradient(to right, #323C55, transparent);
+}  
+.slider-emprendimientos::after {
+    right: 0;
+    background: linear-gradient(to left, #323C55, transparent);
+} 
+.slider-emprendimientos .slider-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+}  
+.slider-emprendimientos img {
+    flex: 0 0 auto;
+    width: 220px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}   
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+.slider-Empresas img:hover {
+    transform: scale(1.05);
+}
+/**********************+footer**********************/
+.footer-Empresas {
+    background: linear-gradient(90deg, #323C55);
+    color: #323C55;
+    padding: 100px 20px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}   
+.footer-logo img {
+    width: 130px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    /*border-radius: 60%; */
+}
+.footer-logo p {
+    max-width: 260px;
+    font-size: 16px;
+    color: #8C6B24;
+    font-weight: 600;
+} 
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}   
+.footer-nav ul li {
+    margin-bottom: 8px;
+}   
+.footer-nav ul li a,.footer-contacto {
+    color: #8C6B24;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.footer-nav ul li a:hover {
+    color: #EFF1F6;
+} 
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+}  
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+.footer-social img:hover {
+    transform: scale(1.2);
+}   
+.footer-bottom {
+    text-align: center;
+    padding: 2% 0;
+    border-top: 2px solid #ffffff4d;
+    margin-top: 1.5%;
+} 
+.footer-bottom p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #8C6B24;
+}
